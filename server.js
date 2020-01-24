@@ -29,7 +29,7 @@ var server = http.createServer(function(request, response) {
     console.log(request.headers) //得到所有符合格式的请求头
 
 
-    if (path === '/') {
+    if (path === '/no') {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
         response.write(`三狗开饭`)
@@ -39,7 +39,7 @@ var server = http.createServer(function(request, response) {
         response.setHeader('Content-Type', 'text/css;charset=utf-8')
         response.write(`body{color: red;}`)
         response.end()
-    } else if (path === '/html') {
+    } else if (path === '/') {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
         console.log("accept:")
@@ -49,7 +49,7 @@ var server = http.createServer(function(request, response) {
         <head>
             <link rel="stylesheet" href="/x">
         </head>
-        <h1>在路径返回一个HTML内容</h1>
+        <h1>在8888端口返回一个h1标签</h1>
         `)
         response.end()
     } else if (path === '/ChangeStatusCode') {
